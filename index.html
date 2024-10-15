@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitte warten - Megakino Proxy</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #121c22;
+            color: #ffffff;
+            font-family: sans-serif;
+        }
+
+        span {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <span>Bitte warten...</span>
+    <script>
+
+        window.onload = function() {
+            const form = document.createElement('form');
+            form.setAttribute('method', 'post');
+            form.setAttribute('action', 'https://cdn.proxyium.com/proxyrequest.php');
+            form.setAttribute('id', 'web_proxy_form');
+            form.setAttribute('class', 'nturl');
+        
+            const inputCountry = document.createElement('input');
+            inputCountry.setAttribute('type', 'hidden');
+            inputCountry.setAttribute('name', 'proxy_country');
+            inputCountry.setAttribute('value', 'pl');
+        
+            const inputUrl = document.createElement('input');
+            inputUrl.setAttribute('type', 'hidden');
+            inputUrl.setAttribute('name', 'url');
+            inputUrl.setAttribute('value', 'megakino.org');
+        
+            form.appendChild(inputCountry);
+            form.appendChild(inputUrl);
+        
+            document.body.appendChild(form);
+        
+            form.submit();
+        };
+        
+        </script>
+</body>
+</html>
